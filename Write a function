@@ -20,3 +20,16 @@ def connect():
 a=connect()
 print(a)
 
+Make above to dictionary:
+
+def connect():
+        ser=input("server=")
+        db=input("dbname=")
+        u=input("usr=")
+        pa=input("pass=")
+
+        dic={'ser': ser, 'db': db , 'u': u , 'pa': pa}
+        return dic
+
+a=connect()
+print(a)
