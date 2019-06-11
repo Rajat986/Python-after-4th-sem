@@ -1,0 +1,22 @@
+Method 1:
+
+def connect():
+        ser=input("server=")
+        db=input("dbname=")
+        u=input("usr=")
+        pa=input("pass=")
+        return (ser,db,u,pa)
+a=connect()
+print("cs=server=%s;dbname=%s;usr=%s;pass=%s" %(a))
+
+Method 2:
+
+def connect():
+        ser=input("server=")
+        db=input("dbname=")
+        u=input("usr=")
+        pa=input("pass=")
+        return 'cs=server=%s;dbname=%s;usr=%s;pass=%s' %(ser,db,u,pa)
+a=connect()
+print(a)
+
