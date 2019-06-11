@@ -33,3 +33,26 @@ def connect():
 
 a=connect()
 print(a)
+
+Convert returned string to dictionary:
+
+def connect():
+        ser=input("server=")
+        db=input("dbname=")
+        u=input("usr=")
+        pa=input("pass=")
+        return 'server=%s;dbname=%s;usr=%s;pass=%s' %(ser,db,u,pa)
+
+def c_str_t_dicti(c):
+        dicti={}
+        for i in c.split(";"):
+                k,v=i.split("=")
+                dicti[k]=v
+        return dicti
+        
+
+
+a=connect()
+print(a)
+d=c_str_t_dicti(a)
+print(d)
