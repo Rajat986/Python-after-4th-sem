@@ -13,3 +13,186 @@ from .. import formats
 from ..filters import equalizer
 
 Its Name (which means name, an unique identifier) + Space(which talks something related to scope). Here, a name might be of any Python method or variable and space depends upon the location from where is trying to access a variable or a method.
+-------------------------------------------------------------------------------
+def myfunc1():
+  x = "John"
+  def myfunc2():
+    nonlocal x
+    x = "hello"
+  myfunc2() 
+  return x
+
+print(myfunc1())
+hello
+-------------------------------
+def myfunc1():
+  x = "John"
+  def myfunc2():
+    x = "hello"
+  myfunc2() 
+  return x
+
+print(myfunc1())
+john
+--------------------------------
+def yo():
+	x="John"
+	def yo1:
+		
+SyntaxError: invalid syntax
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+	return x
+
+>>> print(yo())
+John
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+	yo1()
+	return x
+
+>>> print(yo())
+John
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+	yo1()
+	yo2()
+	yo3()
+	return x
+
+>>> print(yo())
+Traceback (most recent call last):
+  File "<pyshell#39>", line 1, in <module>
+    print(yo())
+  File "<pyshell#38>", line 11, in yo
+    yo2()
+NameError: name 'yo2' is not defined
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+	yo1()
+	yo2()
+	return x
+
+>>> print(yo())
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    print(yo())
+  File "<pyshell#41>", line 11, in yo
+    yo2()
+NameError: name 'yo2' is not defined
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+	yo1()
+	yo3()
+	return x
+
+>>> print(yo())
+Traceback (most recent call last):
+  File "<pyshell#45>", line 1, in <module>
+    print(yo())
+  File "<pyshell#44>", line 11, in yo
+    yo3()
+NameError: name 'yo3' is not defined
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+		def yo2():
+			nonlocal x
+			x="Rajat"
+			def yo3():
+				x="Ranjani"
+			yo3()
+		yo2()
+	yo1()
+	return x
+
+>>> print(yo())
+John
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+	def yo2():
+		nonlocal x
+		x="Rajat"
+		def yo3():
+			x="Ranjani"
+		yo3()
+	yo2()
+	yo1()
+	return x
+
+>>> print(yo())
+Rajat
+>>> def yo():
+	x="John"
+	def yo1():
+		x="Pratz"
+	def yo2():
+		nonlocal x
+		x="Rajat"
+		def yo3():
+			nonlocal x
+			x="Ranjani"
+		yo3()
+	yo2()
+	yo1()
+	return x
+
+>>> print(yo())
+Ranjani
+>>> def yo():
+	x="John"
+	def yo1():
+		nonlocal x
+		x="Pratz"
+	def yo2():
+		nonlocal x
+		x="Rajat"
+		def yo3():
+			nonlocal x
+			x="Ranjani"
+		yo3()
+	yo2()
+	yo1()
+	return x
+
+>>> print(yo())
+Pratz
+------------------------------------------------
