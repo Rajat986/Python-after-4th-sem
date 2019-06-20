@@ -12,3 +12,4 @@ from . import echo
 from .. import formats
 from ..filters import equalizer
 
+Its Name (which means name, an unique identifier) + Space(which talks something related to scope). Here, a name might be of any Python method or variable and space depends upon the location from where is trying to access a variable or a method.
