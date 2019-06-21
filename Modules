@@ -289,4 +289,73 @@ def a():
 	z=b()
 	z.c()
 -------------------------------------------------
+Private attributes:-
+
+class friends:
+	def __init__(self,f1,f2):
+		self.__first=f1
+		self.__second=f2
+	def display(self):
+		print(self._friends__first+self._friends__second)
+
+	
+class frands(friends):
+	def display(self):
+		print(self._friends__first+self._friends__second)
+
+Output:-
+>>> s=friends("r",'t')
+>>> s.display()
+rt
+>>> s=frands("r",'t')
+>>> s.display()
+rt
+------------------
+Protected attributes:-
+
+class friends:
+	def __init__(self,f1,f2):
+		self._first=f1
+		self._second=f2
+	def display(self):
+		print(self._first+self._second)
+
+	
+class frands(friends):
+	def display(self):
+		print(self._first+self._second)
+		
+Output:-
+>>> s=friends("r",'t')
+>>> s.display()
+rt
+>>> s=frands("r",'t')
+>>> s.display()
+rt
+----------------------
+Public attributes:-
+
+class friends:
+	def __init__(self,f1,f2):
+		self.first=f1
+		self.second=f2
+	def display(self):
+		print(self.first+self.second)
+
+	
+class frands(friends):
+	def display(self):
+		print(self.first+self.second)
+		
+Output:-
+>>> s=friends("r",'t')
+>>> s.display()
+rt
+>>> s=frands("r",'t')
+>>> s.display()
+rt
+----------------------------------------------------------------------------------
+
+
+
 
