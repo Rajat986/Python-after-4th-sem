@@ -281,3 +281,12 @@ None
 >>> print("In global scope:", spam)
 In global scope: nonlocal spam
 --------------------------------------------------
+Question: Can we create a class inside a function:-
+def a():
+	class b:
+		def c(self):
+			print("In c")
+	z=b()
+	z.c()
+-------------------------------------------------
+
