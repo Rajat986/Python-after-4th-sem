@@ -1,5 +1,4 @@
 abc=input("Enter string: ")
-lis=[]
 dic={}
 def c_cs_to_dict():
     for i in abc.split(';'):
