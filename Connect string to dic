@@ -1,8 +1,9 @@
 abc=input("Enter string: ")
-dic={}
 def c_cs_to_dict():
+    dic={}
     for i in abc.split(';'):
         a,b=i.split('=')
         dic[a]=b
-    print(dic)
-c_cs_to_dict()
+    return dic
+dic=c_cs_to_dict()
+print(dic)
