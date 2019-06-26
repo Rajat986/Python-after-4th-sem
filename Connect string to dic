@@ -1,0 +1,16 @@
+abc=input("Enter string: ")
+lis=[]
+dic={}
+def c_cs_to_dict():
+    for i in abc.split(';'):
+        for j in i.split('='):
+            lis.append(j)
+    l1=[]
+    l2=[]
+    for i in range(0,len(lis),2):
+        l1.append(lis[i])
+    for i in range(1,len(lis),2):
+        l2.append(lis[i])
+    dic=dict(zip(l1,l2))
+    print(dic)
+c_cs_to_dict()
