@@ -1,0 +1,11 @@
+a={'a':'b','c':'d','e':'f'}
+l=[]
+def c_d_to_cs(a):
+    for i in a.items():
+        print(i)
+        l1=list(i)
+        print(l1)
+    
+
+        
+stri=c_d_to_cs(a)
