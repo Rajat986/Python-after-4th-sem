@@ -7,4 +7,3 @@ def Fibo(n):
 
 for i in Fibo(n):
     print(i)
- 
