@@ -1,12 +1,13 @@
 a={'a':'b','c':'d','e':'f'}
-l=[]
+
 def c_d_to_cs(a):
+    l=[]
     for i in a.items():
-        print(i)
         l1=list(i)
-        print(l1)
         st='='.join(l1)
-        l=st
-        print(l+','+st)
+        l.append(st)
+        string=';'.join(l)
+    return string
 
 stri=c_d_to_cs(a)
+print(stri)
