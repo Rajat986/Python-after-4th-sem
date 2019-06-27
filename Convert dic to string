@@ -16,6 +16,6 @@ def c_dict_to_cs(a):
     return string
 
 a=c_cs_to_dict()
-print(a)
+print('Coverted string to dictionary: ',a)
 stri=c_dict_to_cs(a)
-print(stri)
+print('Converted dictionary to string: ',stri)
