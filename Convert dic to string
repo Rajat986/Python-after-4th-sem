@@ -1,6 +1,12 @@
-a={'a':'b','c':'d','e':'f'}
+abc=input("Enter string: ")
+def c_cs_to_dict():
+    dicti={}
+    for i in abc.split(';'):
+        a,b=i.split('=')
+        dicti[a]=b
+    return dicti
 
-def c_d_to_cs(a):
+def c_dict_to_cs(a):
     l=[]
     for i in a.items():
         l1=list(i)
@@ -9,5 +15,7 @@ def c_d_to_cs(a):
         string=';'.join(l)
     return string
 
-stri=c_d_to_cs(a)
+a=c_cs_to_dict()
+print(a)
+stri=c_dict_to_cs(a)
 print(stri)
