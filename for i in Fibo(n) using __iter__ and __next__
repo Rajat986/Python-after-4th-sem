@@ -1,0 +1,17 @@
+class Fibo:
+    def __init__(self,n):
+        self.n=n
+    def __iter__(self):
+        return self
+    def __next__(self):
+        self.a=0
+        self.b=1
+        print(self.a)
+        for i in range(n-1):
+            self.a,self.b=self.b,self.a+self.b
+            yield self.a
+
+n=int(input("Enter number: "))
+z=Fibo(n)
+for i in z.__next__():
+    print(i)
