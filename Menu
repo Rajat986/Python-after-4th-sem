@@ -1,16 +1,16 @@
 class menu:
     def __init__(self):
-        self.menu_items={}
+        self.menu_items=()
     def additem(self,item,price):
-        self.menu_items[item]=price
+        self.menu_items=items,price
     def show(self):
         print("The menu is: ")
         for i in self.menu_items.items():
             print(i)
-    def show_item(self,search_for):
+    def show_items_price(self,search_for):
             print("Price of",search_for,"is:",self.menu_items.get(search_for))
     
-m=menu()
+'''m=menu()
 m.additem("Idly",10)
 m.additem("Vada",20)
 m.additem("Parata",30)
@@ -18,4 +18,8 @@ m.additem("Pav Bhaji",40)
 m.additem("Biryani",50)
 m.show()
 s=input("Enter item to be searched: ")
-m.show_item(s)
+m.show_items_price(s)'''
+
+m=menu()
+m=m+("idly",10)+("vada",20)
+#m.show()
