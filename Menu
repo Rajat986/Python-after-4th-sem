@@ -1,33 +1,24 @@
 class menu:
     def __init__(self):
-        self.l=[]
+        self.l={}
     def additem(self,item,price):
         self.item=item
         self.price=price
-        self.detail=self.item,self.price
-        self.l.append(self.detail)
+        self.l[self.item]=self.price
     def show(self):
         print("The menu is: ")
-        for i in self.l:
+        for i in self.l.items():
             print(i)
     def show_item(self,search_for):
         f=0
-        l2=[]
-        ctr=0
-        a=search_for
-        l2=[i[0] for i in self.l]
-        print(l2)
-        for i in l2:
-            if(a == i):
+        for i in self.l.keys():
+            if(i == search_for):
                 f=1
-                print(i,"FOUND")
-                t=self.l[ctr]
-                print(t)
-                print("Item is : ",a)
-                print("Price is: ",t[1])
-            ctr=ctr+1
+                print(search_for,"FOUND")
+                print("Price of",search_for,"is: ")
         if(f==0):
             print("Item not found in the menu!!!")
+    
 m=menu()
 m.additem("Idly",10)
 m.additem("Vada",20)
