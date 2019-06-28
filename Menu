@@ -10,9 +10,6 @@ class menu:
         for i in self.l.items():
             print(i)
     def show_item(self,search_for):
-        for i in self.l.keys():
-            if(i == search_for):
-                print(search_for,"FOUND")
                 print("Price of",search_for,"is:",self.l.get(search_for))
     
 m=menu()
