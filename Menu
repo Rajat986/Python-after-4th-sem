@@ -21,7 +21,10 @@ class menu:
             if(a == i):
                 f=1
                 print(i,"FOUND")
-                print(self.l[ctr])
+                t=self.l[ctr]
+                print(t)
+                print("Item is : ",a)
+                print("Price is: ",t[1])
             ctr=ctr+1
         if(f==0):
             print("Item not found in the menu!!!")
