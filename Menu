@@ -13,14 +13,16 @@ class menu:
     def show_item(self,search_for):
         f=0
         l2=[]
+        ctr=0
         a=search_for
         l2=[i[0] for i in self.l]
         print(l2)
         for i in l2:
             if(a == i):
                 f=1
-                print(a,"FOUND")
-                print("price is:",)
+                print(i,"FOUND")
+                print(self.l[ctr])
+            ctr=ctr+1
         if(f==0):
             print("Item not found in the menu!!!")
 m=menu()
