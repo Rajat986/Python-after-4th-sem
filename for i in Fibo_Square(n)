@@ -1,4 +1,4 @@
-class Fibo:
+class Fibo_Square:
     def __init__(self,n):
         self.n=n
     def __iter__(self):
@@ -15,5 +15,5 @@ class Fibo:
         
 
 n=int(input("Enter number till where you want Fibonacci Sequence: "))
-for i in Fibo(n):
+for i in Fibo_Square(n):
     print(i)
