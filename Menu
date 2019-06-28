@@ -11,11 +11,13 @@ class menu:
             print(i)
     def show_item(self,search_for):
         f=0
+        ctr=0
         for i in self.l.keys():
             if(i == search_for):
                 f=1
                 print(search_for,"FOUND")
-                print("Price of",search_for,"is: ")
+                print("Price of",search_for,"is: ",self.l.get(search_for))
+            ctr+=1
         if(f==0):
             print("Item not found in the menu!!!")
     
