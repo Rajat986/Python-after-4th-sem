@@ -2,9 +2,7 @@ class menu:
     def __init__(self):
         self.menu_items={}
     def additem(self,item,price):
-        item=item
-        price=price
-        self.menu_items[self.item]=self.price
+        self.menu_items[item]=price
     def show(self):
         print("The menu is: ")
         for i in self.menu_items.items():
