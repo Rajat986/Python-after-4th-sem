@@ -1,1 +1,41 @@
+class dict:
+    pass
 
+class menu(dict):
+    def __init__(self):
+        self.menu_items={}
+    def additem(self,item,price):
+        self.menu_items[item]=price
+    def show(self):
+        print("\nThe menu is: ")
+        for i in self.menu_items.items():
+            print(i)
+    def show_item(self,search_for):
+            print("Price of",search_for,"is:",self.menu_items.get(search_for))
+
+    def __add__(self,ni):
+        item_n,price_n=ni
+        self.additem(item_n,price_n)
+        return self
+
+    def __setitem__(self, index, value):
+        self.menu_items[index] = value
+
+    def __getitem__(self, index):
+        return self.menu_items[index]
+    
+m=menu()
+m.additem("Idly",10)
+m.additem("Vada",20)
+m.additem("Parata",30)
+m.additem("Pav Bhaji",40)
+m.additem("Biryani",50)
+m.show()
+m=m+("idly-vada",30)+("vada",20)
+m.show()
+
+m['IdlyVadas']=30
+m.show()
+
+#s=input("Enter item to be searched: ")
+#m.show_item(s)
