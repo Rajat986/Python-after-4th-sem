@@ -11,14 +11,12 @@ class menu:
             print("Price of",search_for,"is:",self.menu_items.get(search_for))
 
     def __add__(self,ni):
-        print("New item is",ni)
         item_n,price_n=ni
         self.additem(item_n,price_n)
         return self
 
     
 m=menu()
-print(type(m))
 m.additem("Idly",10)
 m.additem("Vada",20)
 m.additem("Parata",30)
@@ -26,8 +24,7 @@ m.additem("Pav Bhaji",40)
 m.additem("Biryani",50)
 m.show()
 m=m+("idly-vada",30)+("vada",20)
-print(type(m))
-
 m.show()
+
 #s=input("Enter item to be searched: ")
 #m.show_item(s)
