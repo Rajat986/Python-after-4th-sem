@@ -13,8 +13,8 @@ class order(dict):
         for i in m.keys():
             if(i == self.o):
                 f=1
-                print("Item already in MENU")
-                return self
+                raise Exception("Item already in MENU")
+                
         if(f == 0):
             self.order_items[self.o]=int(input("Enter price: "))
             print(self.order_items)
@@ -27,3 +27,8 @@ print(m)
 
 n=order()
 n.check_order()
+
+
+
+#s=input("Enter item to be searched: ")
+#m.show_item(s)
