@@ -1,9 +1,11 @@
-class dict:
-    pass
-
-class menu(dict):
+class dicti:
     def __init__(self):
+        self.wel='Welcome to the Hotel'
         self.menu_items={}
+
+    def greet(self):
+        print(self.wel)
+
     def additem(self,item,price):
         self.menu_items[item]=price
     def show(self):
@@ -23,8 +25,13 @@ class menu(dict):
 
     def __getitem__(self, index):
         return self.menu_items[index]
+        
+class menu(dicti):
+    pass
+    
     
 m=menu()
+m.greet()
 m.additem("Idly",10)
 m.additem("Vada",20)
 m.additem("Parata",30)
