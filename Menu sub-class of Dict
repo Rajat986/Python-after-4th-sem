@@ -1,48 +1,29 @@
-class dicti:
-    def __init__(self):
-        self.wel='Welcome to the Hotel'
-        self.menu_items={}
-
-    def greet(self):
-        print(self.wel)
-
-    def additem(self,item,price):
-        self.menu_items[item]=price
-    def show(self):
-        print("\nThe menu is: ")
-        for i in self.menu_items.items():
-            print(i)
-    def show_item(self,search_for):
-            print("Price of",search_for,"is:",self.menu_items.get(search_for))
-
-    def __add__(self,ni):
-        item_n,price_n=ni
-        self.additem(item_n,price_n)
-        return self
-
-    def __setitem__(self, index, value):
-        self.menu_items[index] = value
-
-    def __getitem__(self, index):
-        return self.menu_items[index]
-        
-class menu(dicti):
+class menu(dict):
     pass
-    
-    
+
+class order(dict):
+    def __init__(self):
+        menu.__init__(self)
+        self.o=input("Enter your order: ")
+        self.menu_items={}
+        self.order_items={}
+        
+    def check_order(self):
+        f=0
+        for i in m.keys():
+            if(i == self.o):
+                f=1
+                print("Item already in MENU")
+                return self
+        if(f == 0):
+            self.order_items[self.o]=int(input("Enter price: "))
+            print(self.order_items)
+            return self
+
 m=menu()
-m.greet()
-m.additem("Idly",10)
-m.additem("Vada",20)
-m.additem("Parata",30)
-m.additem("Pav Bhaji",40)
-m.additem("Biryani",50)
-m.show()
-m=m+("idly-vada",30)+("vada",20)
-m.show()
+m['Idly']=10
+m['Vada']=20
+print(m)
 
-m['IdlyVadas']=30
-m.show()
-
-#s=input("Enter item to be searched: ")
-#m.show_item(s)
+n=order()
+n.check_order()
