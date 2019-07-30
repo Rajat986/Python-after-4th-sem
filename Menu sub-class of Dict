@@ -1,3 +1,10 @@
+""" Why do we need self.menu_items?
+    Why do we need self.order_items when order is already a dict i.e- class order(dict)
+    What does check_order do?
+
+    As order is a dictionary, you do not need self.order_items dictionary... Change it"""
+
+
 class menu(dict):
     pass
 
@@ -13,8 +20,7 @@ class order(dict):
         for i in m.keys():
             if(i == self.o):
                 f=1
-                raise Exception("Item already in MENU")
-                
+                raise("Item already in MENU")   
         if(f == 0):
             self.order_items[self.o]=int(input("Enter price: "))
             print(self.order_items)
