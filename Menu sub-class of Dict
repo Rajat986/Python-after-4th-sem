@@ -1,31 +1,22 @@
-""" Why do we need self.menu_items?
-    Why do we need self.order_items when order is already a dict i.e- class order(dict)
-    What does check_order do?
-    Why write menu.__init__(self)? Ans: it is same as dict.__init__(self)
-
-    As order is a dictionary, you do not need self.order_items dictionary... Change it"""
-
-
+#If item not there in menu, this prog does not work
 class menu(dict):
     pass
 
 class order(dict):
     def __init__(self):
-        menu.__init__(self)
         self.o=input("Enter your order: ")
-        self.menu_items={}
-        self.order_items={}
         
     def check_order(self):
         f=0
         for i in m.keys():
             if(i == self.o):
                 f=1
-                raise("Item already in MENU")   
+                raise Exception("Item already in MENU")   
         if(f == 0):
-            self.order_items[self.o]=int(input("Enter price: "))
-            print(self.order_items)
-            return self
+            print(self.o)
+            price=int(input("enter price:"))
+            return order.update({self.o:price})
+            
 
 m=menu()
 m['Idly']=10
@@ -34,6 +25,7 @@ print(m)
 
 n=order()
 n.check_order()
+print(n)
 
 
 
