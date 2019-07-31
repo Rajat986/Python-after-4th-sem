@@ -1,6 +1,7 @@
 """ Why do we need self.menu_items?
     Why do we need self.order_items when order is already a dict i.e- class order(dict)
     What does check_order do?
+    Why write menu.__init__(self)? Ans: it is same as dict.__init__(self)
 
     As order is a dictionary, you do not need self.order_items dictionary... Change it"""
 
