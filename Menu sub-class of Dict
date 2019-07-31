@@ -1,4 +1,3 @@
-#If item not there in menu, this prog does not work
 class menu(dict):
     pass
 
@@ -13,21 +12,15 @@ class order(dict):
                 f=1
                 raise Exception("Item already in MENU")   
         if(f == 0):
-            print(self.o)
-            price=int(input("enter price:"))
-            return order.update({self.o:price})
-            
-
+            return self.o
+        
 m=menu()
 m['Idly']=10
 m['Vada']=20
 print(m)
 
 n=order()
-n.check_order()
+b=n.check_order()
+n[b]=int(input("Enter price: "))
 print(n)
 
-
-
-#s=input("Enter item to be searched: ")
-#m.show_item(s)
