@@ -23,4 +23,3 @@ n=order()
 b=n.check_order()
 n[b]=int(input("Enter price: "))
 print(n)
-
